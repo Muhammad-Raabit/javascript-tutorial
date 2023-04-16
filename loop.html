@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    // for (let i = 1; i <= 10; i++) {
+    //     if (i == 5) {
+    //         break;
+    //     }
+    //     console.log(i);
+    // }
+   
+const city = ['Islamabad','Lahore','Peshawar','Karachi','Sukkur'];
+let check = prompt("Enter City Name");
+
+let firstChar = check.slice(0,1).toUpperCase()
+let otherChar = check.slice(1).toLowerCase()
+check = firstChar + otherChar;
+
+let result = city.reduce((acc,curr)=>{
+    if(curr === check)
+    acc+=curr
+    return acc;
+},"")
+if (result) {
+    alert(`${check} city founded`)
+    
+}else{
+    alert("City Not Found")
+}
+// alert(result);
+
+/*
+let result = city.some((x)=>{
+    if(x === check)
+       return x
+})
+
+console.log(result)
+console.log(check)
+
+if(result)
+console.log(check +" City Found")
+else
+console.log("City Not Found")
+*/
+
+/*
+let acc ="";
+for (let i = 0; i < city.length; i++) {
+    acc+= city[i] === check ? true : false;
+}
+console.log(acc);
+
+if(acc)
+alert(check + " city found ");
+else
+alert(`city not Found`);
+
+*/
+
+/*
+let result = city.filter((x)=>{
+    if(x === check)
+    return x
+})
+console.log(result)
+if(result)
+alert(`${result} City Found ...`)
+else
+alert("City Not Found");
+*/
+
+
+/*
+let name = prompt("Enter Your Name");
+let check = "";
+for (let i = name.length-1; i >= 0; i--) {
+
+    check+=name[i];
+}
+if (name === check) {
+    console.log(name + " Palindrome Word ")
+}else{
+    console.log(name + " Not Palindrom Word")
+}
+*/
+/*
+for (let i = 1; i <= 100; i+=10) {
+    for (let j = i; j < i+10; j++) {
+
+        document.write(j+" ")
+    }
+    document.write("<br>")
+    
+}
+  */  
+// table excersice
+
+// let table = prompt("Enter the Table Number...");
+// for (let i = 1; i <= 10; i++) {
+//     document.write(table+" x "+i+" = "+i*table +"<br>");
+    
+// }
+
+// excersice
+
+
+// for(let i = 10; i>0;i--){
+//     document.write(i+"<br>")
+// }
+
+// excersice
+
+// let num = prompt("Enter a Number");
+// let i =0;
+// do {
+//     document.write((i+1)+"<br>")
+//     i++;
+// } while (i<num);
+
+// while(i<num){
+//     document.write(i+"<br>");
+//     i++;
+// }
+
+// let a ,b;
+// for (let a = 1,b=1; a <= num; a++,b++) {
+//     document.write(a+"<br> "+b);
+    
+// }
+
+
+
+// excersice
+
+
+// for (let i = 1; i <= 10; i++) {
+
+//     if(i % 2 == 0){
+//         document.write("Even Numbers "+i+"<br>");
+//     }else{
+//         document.write("Odd Numbers "+i+"<br>")
+//     }
+    
+// }
+
+
+// for (let i = 1; i <=9; i++) {
+//     for (let j = 1; j <=9; j++) {
+//         if (j<=i) {
+//             document.write(j)
+//         }else{
+//             document.write(" ")
+//         }
+        
+//     }
+//         document.write("<br>")
+    
+// }
+
+
+// for (let i = 1; i <= 5; i++) {
+//     for (let j = 1; j <=i; j++) {
+//         document.write(i + " ")
+        
+//     }
+    
+//     document.write("<br>");
+
+// }
+
+
+
+const arr = [
+ ['Saqib','A',25],
+ ['Raabit','B',21],
+ ['Ahmed','C',22],
+ ['Ansab','D',2],
+
+]
+for (let i = 0; i < arr.length; i++) {
+for (let j = 0; j < arr[i].length; j++) {
+    document.write(arr[i][j]+ " <br> ");
+    
+}
+
+    
+    
+}
+
+
+ </script>   
+</body>
+</html>

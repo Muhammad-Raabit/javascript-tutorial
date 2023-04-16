@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+/*
+const city = ['islamabad','lahore','peshawar','karachi','sukkur'];
+let check = prompt("Enter City Name");
+
+check = check.toLowerCase();
+let result = city.some((x)=>{
+    if(x === check)
+       return x
+})
+
+console.log(result)
+
+if(result)
+console.log("City Found")
+else
+console.log("City Not Found")
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+ /*       const persons = [
+            {
+                name: "Burhan",
+                age: 28
+            },
+            {
+                name:"Rameez",
+                age:15
+
+            },
+            {
+                name:"Ahmed",
+                age : 18
+            }
+        ]
+
+// check All ages if greaterThan 18 or Equal
+        const result = persons.every((x)=>{
+            if(x.age>=18)
+            return x
+        })
+// check Only One ages if greaterThan 18 or Equal
+
+        const result1 = persons.some((x)=>{
+            if(x.age>=18)
+            return x
+        })
+        console.log(result1)
+
+
+*/
+
+
+
+	function fnCheckDatatype_Every(arr, sDatatype){
+	return arr.every(function(element){
+			return typeof(element) === sDatatype;
+		});
+	}
+	
+	console.log(fnCheckDatatype_Every(["Geeks","for","Geeks"],"string"));
+	console.log(fnCheckDatatype_Every(["Geeks",4,"Geeks"],"string"));
+
+
+
+	
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

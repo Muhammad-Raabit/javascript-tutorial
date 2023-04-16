@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let p = Promise.allSettled([
+        new Promise((resolve, reject) => {
+          let a = 1 + 2;
+          if (a === 2) {
+            resolve("SuccesFully Resolved 1");
+          } else {
+            reject("Error");
+          }
+        }),
+        new Promise((resolve, reject) => {
+          let loginUser = false;
+          if (loginUser) {
+            resolve("Login SuccessFully 2");
+          } else {
+            reject("Error While Login");
+          }
+        }),
+      ]);
+
+      p.then((response) => {
+        console.log(response);
+        return response;
+      })
+        .then((data) => {
+          data.forEach((element) => {
+            console.log(element);
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

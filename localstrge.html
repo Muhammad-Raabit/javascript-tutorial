@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    //Local Storage
+const sabzi = ["Bhindi","Louki","kaduu sharif","karela"]
+
+    localStorage.setItem("Name","Raabit")
+    localStorage.setItem("sabzi",JSON.stringify(sabzi));
+    // localStorage.removeItem("Name")
+    // localStorage.clear();
+    console.log(localStorage.getItem("Name"))
+   let result = JSON.parse(localStorage.getItem("sabzi"))
+    console.log(result)
+    
+// Session Storage Same;
+
+sessionStorage.setItem("Name","Raabit")
+console.log(sessionStorage.getItem("Name"))
+
+
+// Cookie
+document.cookie="Name=Raabit; expires="+ new Date(2030,0,1)
+.toUTCString();
+document.cookie="lName=Saqib; expires="+ new Date(2052,0,1)
+.toUTCString();
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rotate{
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 50% 85%;
+            height: 200px;
+            width: 200px;
+        }
+        button,a{
+            display: flex;
+            flex-direction: column;
+            margin: 2em 0;
+        }
+        label,input{
+            display: flex;
+            /* margin: 1em; */
+        }
+        label{
+            /* margin: 20px 0; */
+            margin: .75em 0; 
+            font-size: 1.2rem;
+        }
+        input[type="text"]{
+            background-image: url('3178158.png');
+            background-repeat: no-repeat;
+            background-position-x: 0%;
+            background-size: 15% 105%;
+            padding-left: 40px;
+            margin: 0px;
+            /* margin: 5px 0; */
+            border: none;
+            font-size: 1rem;
+            /* outline: none; */
+            border-bottom: 2px solid black;
+        }
+        input:focus{
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+<a href="#" 
+onclick="foo('Hello Raabit')">Click Me
+</a>
+<button onclick="clickbtn()">Click</button>
+<img id="rotate" src="img.jpg" onmouseover="mouseEvent()" alt="">
+
+<label for="">Name</label>
+<input type="text" name="" id="">
+<label for="">Password</label>
+<input type="text" name="" id="">
+</body>
+<script>
+function foo(a){
+    alert(a);
+}
+
+ function clickbtn(){
+    alert("clicked");
+}
+function mouseEvent(){
+
+    document.getElementById("rotate").style="transform: scale(1.2);;transition:transform .3s linear";
+    
+}
+function mouseOut(){
+    addEventListener("mouseout", ()=>{
+    document.getElementById("rotate").style="transform: null;;transition:all .5s linear";
+})
+}
+
+mouseOut();
+</script>
+</html>

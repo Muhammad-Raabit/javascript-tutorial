@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi saepe nihil voluptatibus ratione impedit, iusto possimus non dicta nesciunt?
+         A amet nulla id porro laboriosam obcaecati in itaque quidem reprehenderit!
+    </p>
+    <button>Clear Time</button>
+
+<br>
+<input type="text" id="name">
+<button onclick="submitData()">Submit</button>
+
+<div id="mess"></div>
+    <script>
+
+console.log("start");
+setTimeout(function(){
+console.log("SetTimeOut Function")
+},3000)
+console.log("End")
+
+
+
+// __________________________________________________
+
+let clear = setTimeout(color,3000)
+let p =document.querySelector('p');
+        
+function color()
+{
+ p.style="color:red";
+}
+document.querySelector('button').addEventListener("click",()=>{
+    clearTimeout(clear)
+    
+})
+// ___________________________________________
+
+
+function submitData(){
+let val = document.getElementById("name").value;
+let mess = document.getElementById("mess");
+val===''?mess.innerHTML="Please Enter SomeThing":mess.innerHTML="Heloo "+val;
+
+setTimeout(()=>{
+document.getElementById("name").value="";
+mess.innerHTML="";
+},3000)
+
+}
+    </script>
+</body>
+</html>

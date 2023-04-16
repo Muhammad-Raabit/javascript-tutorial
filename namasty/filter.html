@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const arr = [5,1,3,2,6];
+
+function isEven(x){
+return x%2 === 0;
+}
+
+function isOdd(x){
+return x%2;
+}
+
+function greaterThan(x){
+  return  x>4;
+}
+const outPut = arr.filter(greaterThan);
+console.log(outPut);
+
+// _______________________________________________
+
+const users = [ 
+    { firstName: "Muhammad", lastName: "Saqib", age: 26},
+    { firstName: "Muhammad", lastName: "Raabit", age:75},
+    { firstName: "Abdul", lastName: "Samad", age:50},
+    { firstName: "Syed", lastName: "Hatil", age: 26}
+]
+
+
+const output1 = users.filter((x)=>{
+    if (x.age < 30) {
+    return x.age;
+}
+}).map((x)=>{
+return x.firstName;
+})
+console.log(output1)
+
+// ___________________________________________________
+/*
+
+function fnFilterStudents_loop(Student){
+	return	Student.filter((x)=>{
+           return x.fPercentage > 80.0;
+        })
+
+
+	}
+	Student = [
+		{sStudentId : "001" , fPercentage : 91.2},
+		{sStudentId : "002" , fPercentage : 78.7},
+		{sStudentId : "003" , fPercentage : 62.9},
+		{sStudentId : "004" , fPercentage : 81.4}
+    ];
+		
+
+	console.log(fnFilterStudents_loop(Student));
+
+*/
+    </script>
+</body>
+</html>

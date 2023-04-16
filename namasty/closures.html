@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function x() {
+        // x lexical envirment global window scope
+        var a = 5;
+        function y() {
+          // y lexical envirment inside the x
+          console.log(a);
+        }
+        return y;
+      }
+      let z = x();
+      z();
+function y() {
+  for (let i = 1; i <= 5; i++) {
+        setTimeout(function(){
+          console.log(i)
+        },i*1000)
+      }
+}
+      
+y()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*    
+        if(true){
+            var a = 10;
+            let b = 20;
+            const c = 30;
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        }
+        console.log(window.a)//10 will be Print Beacuse its global Window Scope
+        console.log(b)
+        console.log(c)
+        
+*/
+//Shadowing variable;
+var a = 100;
+if(true){
+    var a=10; // This / window is represt global Widow Object;
+    console.log(a);
+}
+console.log(a); // a is shadowing into 10 Not behave 100. But let Not Shadowing;
+
+
+
+
+let a = "hy"
+function foo(){
+a = "hello";
+}
+foo()
+console.log(a);//a print hello but if i'll not call fun so this is print hy
+
+
+
+    </script>
+</body>
+</html>

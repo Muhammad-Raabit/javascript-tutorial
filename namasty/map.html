@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const arr = [5,1,3,2,6];
+
+const double = function (x){
+return x * 2;
+}
+const triple = function(x){
+return x * 3;
+}
+const binary = function(x){
+return x.toString(2);
+}
+
+const output = arr.map((x)=>{
+    return x.toString(2);
+});
+
+console.log(output);
+
+// ________________________________________________________
+
+const users = [ 
+    { firstName: "Muhammad", lastName: "Saqib", age: 26},
+    { firstName: "Muhammad", lastName: "Raabit", age:75},
+    { firstName: "Abdul", lastName: "Samad", age:50},
+    { firstName: "Syed", lastName: "Hatil", age: 26}
+]
+
+
+const fullName = users.filter((x)=>{
+
+let obj ={
+    fullName:x.firstName +" "+ x.lastName
+    };
+    return obj; 
+
+})
+
+console.log(fullName);
+// _______________________________________________________________
+
+const products = [{
+    name:"Laptop",
+    price:1000,
+    count:5
+},
+{
+    name:"Desktop",
+    price:1500,
+    count:2
+},
+{
+    name:"Phone",
+    price:500,
+    count:10
+}
+
+]
+
+const result =products.map((x)=>{
+   return {
+    Name:x.name,
+    TotalValue: x.price * x.count};
+})
+
+
+
+
+// __________________________________
+let myName = "Raabit";
+let nameArray = myName.split(""); // string to array
+let newName = nameArray.map(x=>{
+    return `${x}${x}`;
+})
+
+console.log(newName);
+let joinedNewName = newName.join("");// array to string
+console.log(joinedNewName);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

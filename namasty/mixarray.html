@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+// const users = [
+//     {
+//         userId: 1 ,ammount: 10
+//     },
+//     {
+//         userId: 1 ,ammount: 15
+//     },
+//     {
+//         userId: 2 ,ammount: 5
+//     },
+
+//     {
+//         userId: 2 ,ammount: 100
+//     }
+// ]
+
+
+// const result = users.filter((x) => x.userId===1).
+// map((x) => x.ammount).
+// reduce((acc,curr)=> acc+=curr);
+// console.log(result)
+    
+// _______________________________________________________________
+
+const employees = [
+{
+    id:1101,
+    firstName:"Muhammad",lastName:"Saqib",
+    company:"facebook",email:"saqib@gmail.com",
+    salary:90000,department:"sales",country:"Georgia",
+    dob:"wed Mar 24 1976 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1201,
+    firstName:"Aqib",lastName:"Javed",
+    company:"Apple",email:"javed@gmail.com",
+    salary:560000,department:"IT",country:"UK",
+    dob:"Sat Feb 24 1979 12:50:50 GMT+0000 (UTC)"
+},
+{
+    id:1102,
+    firstName:"Shaheen",lastName:"Afridi",
+    company:"Apple",email:"afridi@gmail.com",
+    salary:570000,department:"IT",country:"USA",
+    dob:"Sun Apr 09 1967 10:11:19 GMT+0000 (UTC)"
+},
+{
+    id:2105,
+    firstName:"Minhaj",lastName:"Alam",
+    company:"Amazon",email:"minhaj@gmail.com",
+    salary:770000,department:"HR",country:"UK",
+    dob:"Sat July 23 1994 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:2501,
+    firstName:"Saad",lastName:"Ali",
+    company:"Amazon",email:"saad@gmail.com",
+    salary:51000,department:"IT",country:"UK",
+    dob:"Fri Aug 14 1987 23:30:46 GMT+0000 (UTC)"
+},
+{
+    id:2204,
+    firstName:"Abdul",lastName:"Ahad",
+    company:"facebook",email:"ahad@gmail.com",
+    salary:24000,department:"HR",country:"USA",
+    dob:"wed May 23 1973 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:2201,
+    firstName:"Haris",lastName:"Rauf",
+    company:"facebook",email:"haris@gmail.com",
+    salary:65000,department:"IT",country:"Georgia",
+    dob:"wed Apr 24 1982 16:11:19 GMT+0000 (UTC)"
+},
+{
+    id:2101,
+    firstName:"Babar",lastName:"Azam",
+    company:"Google",email:"babar@gmail.com",
+    salary:80000,department:"sales",country:"USA",
+    dob:"Thu Jun 11 1970 13:45:19 GMT+0000 (UTC)"
+},
+{
+    id:1125,
+    firstName:"Abdul",lastName:"Samad",
+    company:"Apple",email:"Abdul@gmail.com",
+    salary:95000,department:"HR",country:"USA",
+    dob:"Fri Jan 29 1971 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1159,
+    firstName:"Zahid",lastName:"Mahmood",
+    company:"Amazon",email:"zahid@gmail.com",
+    salary:70000,department:"IT",country:"Georgia",
+    dob:"wed Feb 26 1997 20:30:19 GMT+0000 (UTC)"
+},
+{
+    id:1145,
+    firstName:"Ubaid",lastName:"Ahmed",
+    company:"Google",email:"Ubaid@gmail.com",
+    salary:180000,department:"IT",country:"USA",
+    dob:"Sun Oct 12 1980 09:42:19 GMT+0000 (UTC)"
+},
+{
+    id:1131,
+    firstName:"Mahmood",lastName:"qureshi",
+    company:"facebook",email:"mahmood@gmail.com",
+    salary:60000,department:"HR",country:"Georgia",
+    dob:"Sun Feb 5 1989 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1100,
+    firstName:"Hatil",lastName:"Sahab",
+    company:"Amazon",email:"hatil@gmail.com",
+    salary:840000,department:"IT",country:"USA",
+    dob:"Tue May 22 1979 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1209,
+    firstName:"Moin",lastName:"Akhter",
+    company:"facebook",email:"moin@gmail.com",
+    salary:460000,department:"sales",country:"UK",
+    dob:"Sat Nov 17 1976 16:40:19 GMT+0000 (UTC)"
+},
+{
+    id:1105,
+    firstName:"Shahzad",lastName:"Akber",
+    company:"facebook",email:"shahzad@gmail.com",
+    salary:370000,department:"HR",country:"India",
+    dob:"Thus Aug 3 1961 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1002,
+    firstName:"Hassan",lastName:"Raza",
+    company:"Amazon",email:"hassan@gmail.com",
+    salary:490000,department:"IT",country:"Georgia",
+    dob:"Tue Sep 27 1983 16:15:19 GMT+0000 (UTC)"
+},
+{
+    id:1105,
+    firstName:"Burhan",lastName:"Siddique",
+    company:"Apple",email:"Burhan@gmail.com",
+    salary:590000,department:"HR",country:"USA",
+    dob:"wed Mar 24 1976 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1144,
+    firstName:"Ahmed",lastName:"Raza",
+    company:"Google",email:"ahemd@gmail.com",
+    salary:980000,department:"IT",country:"India",
+    dob:"Tue Apr 05 1966 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1201,
+    firstName:"Maroof",lastName:"Ahmed",
+    company:"facebook",email:"maroof@gmail.com",
+    salary:750000,department:"HR",country:"UK",
+    dob:"Tue Dec 23 1997 11:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1133,
+    firstName:"Muhammad",lastName:"Raabit",
+    company:"Amazon",email:"raabit@gmail.com",
+    salary:90000,department:"sales",country:"USA",
+    dob:"wed Feb 20 1985 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1122,
+    firstName:"Haseeb",lastName:"Rehman",
+    company:"Apple",email:"haseeb@gmail.com",
+    salary:980000,department:"IT",country:"India",
+    dob:"Sun Jan 30 1972 04:37:19 GMT+0000 (UTC)"
+},
+{
+    id:1120,
+    firstName:"Hamza",lastName:"Ali",
+    company:"Apple",email:"hamza@gmail.com",
+    salary:124000,department:"IT",country:"Georgia",
+    dob:"wed Mar 24 1976 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1055,
+    firstName:"Shano",lastName:"siddiqui",
+    company:"Amazon",email:"shano@gmail.com",
+    salary:870000,department:"sales",country:"India",
+    dob:"Fri Feb 30 1988 25:41:19 GMT+0000 (UTC)"
+},
+{
+    id:1041,
+    firstName:"Furkan",lastName:"Siddiqui",
+    company:"Apple",email:"furkan@gmail.com",
+    salary:910000,department:"sales",country:"India",
+    dob:"wed Apr 21 1980 01:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1505,
+    firstName:"amjad",lastName:"ahmed",
+    company:"Google",email:"amhjad@gmail.com",
+    salary:450000,department:"HR",country:"UK",
+    dob:"Thu Dec 24 1956 30:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1503,
+    firstName:"Rameez",lastName:"Qurni",
+    company:"Google",email:"rameez@gmail.com",
+    salary:670000,department:"HR",country:"UK",
+    dob:"Tue July 22 1971 21:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1555,
+    firstName:"Saleem",lastName:"Qureshi",
+    company:"Apple",email:"saleem@gmail.com",
+    salary:690000,department:"IT",country:"USA",
+    dob:"Mon Jun 06 1966 12:11:19 GMT+0000 (UTC)"
+},
+{
+    id:1101,
+    firstName:"Muhammad",lastName:"Zaid",
+    company:"Amazon",email:"zaid@gmail.com",
+    salary:450000,department:"IT",country:"India",
+    dob:"Fri Feb 10 1960 11:11:19 GMT+0000 (UTC)"
+}
+]
+
+
+function main(employees){
+/* 1: find and print Avg Salary of all Employees 
+    who Works in Georgia  Amazon company */
+const result = employees.filter((x)=>{
+if (x.country === "Georgia" && x.company === "Amazon") {
+    return x;
+}
+})
+
+let final = result.reduce((acc,curr)=>{
+let total = acc+=curr.salary;
+return total;
+},0)/result.length;
+
+console.log(`1: ${final}`);
+
+
+
+/* 2: Find and print list of the Employees 
+which work in facebook IT department */
+// opper ye Kam filter sy kiya hy and neachy reduce sy kiya hy.
+const list2 = employees.reduce((acc,curr)=>{
+    if (curr.company === 'facebook' && curr.department === 'HR') {
+    acc.push(curr);    
+    }
+    return acc;
+},[])
+console.log("2:", list2);
+
+/* 3:
+*/
+
+
+
+
+/* 4: Get and Print a List of Employee with only Email,
+firstName and dob of The Employee which work in Google UK
+HR Department. 
+*/
+
+
+const list3 = employees.filter((x)=>{
+    if (x.country === 'UK' && x.department === 'HR' && x.company === 'Google') {
+        return x;
+    }
+}).map((x)=>{
+  return  x.firstName + " " + x.email + " "+x.dob
+})
+console.log("3: ",list3)
+
+}
+
+
+
+main(employees)
+    </script>
+
+</body>
+</html>

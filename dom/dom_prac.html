@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="message">
+
+    </div>
+    <section>
+        <input type="text">
+        <button onclick="getMessage()">Send</button>
+    </section>
+    </body>
+<script>
+
+function getMessage(){
+    let message = document.querySelector(".message");
+    let input = document.querySelector("input");
+    let p = document.createElement("p");
+    p.innerHTML = input.value;
+    // let txt = document.createTextNode(input.value);
+    // p.appendChild(txt)
+    message.appendChild(p);
+    console.log(p)
+
+    input.value =" ";
+
+}
+
+</script>
+</html>

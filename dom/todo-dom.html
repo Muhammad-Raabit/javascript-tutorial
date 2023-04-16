@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <style>
+        .delbtn{
+            background-color: red;
+            color: white;
+            padding: 0px 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+        .editbtn{
+            background-color: yellow;
+            color: black;
+            padding: 0px 25px;
+            margin-right: 10px;
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+        ul{
+            list-style-type: decimal;
+            display:table-row;
+        }
+        li{
+            vertical-align: middle;
+            display: table-cell;
+            display: flex;
+            border-bottom: 2px solid black;
+            margin: 20px;
+            padding: 10px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    
+<input type="text" placeholder="Enter Todo" class="input">
+<button onclick="addItem()">ADD ITEM</button>
+<button onclick="deleteAll()">Delete All</button>
+
+<ul class="ul">
+
+</ul>
+
+</body>
+<script>
+const firebaseConfig = {
+    apiKey: "AIzaSyAZ1Dv4G2x11px7qgRY7xELK1Y6cT4D_j4",
+    authDomain: "myapp-728b0.firebaseapp.com",
+    databaseURL: "https://myapp-728b0-default-rtdb.firebaseio.com",
+    projectId: "myapp-728b0",
+    storageBucket: "myapp-728b0.appspot.com",
+    messagingSenderId: "160392662989",
+    appId: "1:160392662989:web:439a14f8699f6525dafe84"
+  };
+
+  // Initialize Firebase
+
+  firebase.initializeApp(firebaseConfig);
+
+
+
+
+
+let input = document.querySelector(".input");
+let ul = document.querySelector(".ul");
+
+firebase.database().ref("todos").on("child_added",(data)=>{
+
+let li = document.createElement("li");
+let del = document.createElement("button");
+let edit = document.createElement("button");
+let liText = document.createTextNode(data.val().value);
+del.setAttribute("class","delbtn")
+del.setAttribute("onclick","delItem(this)")
+del.setAttribute("id",data.val().key);
+del.innerText="Delete";
+
+edit.classList.add("editbtn")
+edit.setAttribute("onclick","editItem(this)")
+edit.setAttribute("id",data.val().key)
+edit.innerText="Edit";
+
+li.appendChild(liText);
+ul.appendChild(li);
+li.appendChild(del)
+li.appendChild(edit)
+})
+
+function addItem() {
+    // let li = document.createElement("li");
+    // let del = document.createElement("button");
+    // let edit = document.createElement("button");
+    // edit.classList.add("editbtn")
+    // edit.innerText = "Edit";
+    // edit.setAttribute("onclick","editItem(this)");
+    // del.innerHTML = "Delete";
+    // del.setAttribute("onclick","delItem(this)");
+    // del.setAttribute("class","delbtn");
+  // let liText = document.createTextNode(input.value);
+
+  // li.appendChild(del)
+  // li.appendChild(edit)
+  // ul.appendChild(li);
+
+  let key = firebase.database().ref("todos").push().key;
+   console.log(key)
+  let obj = {
+    value:input.value,
+    key:key
+  }
+firebase.database().ref("todos/"+key).set(obj)
+  input.value = "";  
+}
+function delItem(e){
+  firebase.database().ref("todos/"+e.id).remove();
+  e.parentNode.remove();
+}
+function deleteAll() {
+  firebase.database().ref("todos").remove();
+    ul.innerHTML = "";
+}
+function editItem(e) {
+let value = e.parentNode.firstChild.nodeValue;
+    let edit = prompt("Enter Edit Value",value)
+    let editItem = {
+      value:edit,
+      key:e.id
+    }
+    firebase.database().ref("todos/"+e.id).set(editItem);
+    e.parentNode.firstChild.nodeValue = edit;
+
+}
+
+</script>
+</html>

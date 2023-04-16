@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #di{
+            width: 5px;height: 50px;background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div id="di"></div>
+    <button>Clear Interval</button>
+    <script>
+
+let count = 0;  
+
+let timer = setInterval(()=>{
+
+    count++
+    console.log(count);
+},1000);
+
+setTimeout(()=>{
+    clearInterval(timer);
+},5000)
+
+
+
+/*
+let x =10;
+let clearr = setInterval(()=>{
+x+=10;
+document.getElementById("di").style=`width:${x}px`;
+if (x===920) 
+clearInterval(clearr)
+
+},10)
+*/
+
+
+
+   /* let x= 1;
+
+let clear=setInterval(()=>{
+
+    document.getElementById("di").innerHTML=x;
+    x++;
+
+},100)
+*/
+// _________________________________________
+/*
+let clear1 = setInterval(()=>{
+            document.getElementById("di").innerHTML+="hEloo"+"<br>";
+        },1000)
+
+*/
+    document.querySelector("button").addEventListener("click",()=>{
+    // clearInterval(clear1);
+    // clearInterval(clear2);
+    // clearInterval(clear)
+
+})
+
+
+// ________________________________________
+/*let clear2 = setInterval(()=>{
+    let time = new Date().toLocaleTimeString();
+    let date = new Date().getDate();
+    let day = new Date().toDateString();
+    document.querySelector("div").innerHTML=`<h1>${time} <br> ${date} <br>${day}</h1>`;
+},1000)
+*/
+// _____________________________________________________
+
+    </script>
+</body>
+</html>

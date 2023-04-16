@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<input type="text" name="" id="txt1">
+<select name="" id="oper">
+    <option value=""></option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">x</option>
+    <option value="/">/</option>
+</select>
+<input type="number" name="" id="txt2">
+<button onclick="result()">Calculate</button><br>
+<input type="number" name="" id="res" readonly style="width: 45%;margin-top:50px;">
+
+
+</body>
+<script>
+
+
+    function result(){
+       let txt1 = +document.getElementById("txt1").value;
+       let txt2 = +document.getElementById("txt2").value;
+       let oper = document.getElementById("oper").value;
+       let res = document.getElementById("res");
+if (oper === "+" && txt1 != "" && txt2 != "" && !isNaN(txt1)) {
+   res.value=txt1 + txt2;
+}else if (oper === "-" && txt1 != "" && txt2 != "") {
+   res.value=txt1 - txt2;
+}else if (oper === "*" && txt1 != "" && txt2 != "") {
+   res.value=txt1 * txt2;
+}
+else{
+    alert("Please select Fields")
+
+}
+
+setTimeout(()=>{
+    res.value = "";
+    this.txt1.value ="";
+    this.txt2.value = "";
+},3000)
+
+    }
+</script>
+</html>

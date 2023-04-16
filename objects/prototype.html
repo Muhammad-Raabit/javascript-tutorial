@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body></body>
+  <script>
+    // const setData = {
+    //     getAge: function(){
+    // let age = new Date().getFullYear()-this.dob;
+    // return age;
+    //     },
+    //     getFullName:function(){
+    //        return this.firstName + " "+this.lastName;
+    //     }
+
+    // }
+    // ________________________________________________
+    setData = {
+      getAge: function () {
+        let age = new Date().getFullYear() - this.dob;
+        return age;
+      },
+      getFullName: function () {
+        return this.firstName + " " + this.lastName;
+      },
+    };
+
+    const student = {
+      firstName: "Muhammad",
+      lastName: "Raabit",
+      dob: 2000,
+    };
+
+    const teacher = {
+      firstName: "Zia",
+      lastName: "Shahid",
+      dob: 19980,
+    };
+
+    student.__proto__ = setData;
+    teacher.__proto__ = setData;
+    console.log(student.getFullName());
+    console.log(teacher.getFullName());
+    console.log(student.getAge());
+
+    // console.log(student);
+
+    // _______________________________________
+
+    Array.prototype.convertToObject = function () {
+      let obj = {};
+      this.forEach((element) => {
+        obj[element] = element;
+      });
+      return obj;
+    };
+
+    let cities = ["karachi", "lahore", "Islamabad"];
+
+    console.log(cities.convertToObject());
+  </script>
+</html>

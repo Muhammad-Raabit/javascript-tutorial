@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="pi" id="para" data-target="#para">This is paragraph</p>
+</body>
+<script>
+    let a = document.getElementById("para");
+    if (a.hasAttributes) {
+        console.log("Founded")
+        console.log(a.getAttribute("class"));
+        console.log(a.getAttributeNames());
+        console.log(a.getAttributeNode("class").nodeValue);
+        console.log(a.attributes);
+        a.setAttribute("class","pi para")
+        console.log(a.getAttribute("class"));
+
+    } else{
+        console.log("Not Found");
+    }
+</script>
+</html>

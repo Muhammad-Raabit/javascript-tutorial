@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//Array Cloning
+const cities = ["karachi","lahore","Islamabad"];
+copy = [...cities];
+
+console.log(cities);
+console.log(copy);
+cities.push("NewCity")
+console.log(cities);
+console.log(copy);
+
+
+
+/*
+const fruits = ["mango","banana","Apple"];
+ const vegeTables = [...fruits,"lauki","kheera","Alo"]
+
+    console.log(vegeTables);
+*/
+/*
+function addNumber(a,b,...other){
+    console.log(a+b);
+    other.forEach(e=>console.log(e+a+b))
+    // console.log(other)
+}
+addNumber(2,2,5,6,7,8);
+*/
+/*
+const names = ["Raabit","Saqib","Ahmed"];
+
+function getnames(name1,name2,name3){
+    console.log(`${name1} ${name2} ${name3}`)
+}
+getnames(...names)
+*/
+
+const student = {
+    name: "Raabit",
+    age:22,
+    hobbies:["cricket","Medical Learning"]
+}
+let {...studentDetail} = student;
+console.log(studentDetail);
+
+const newStudent = {
+    ...student,
+    age:25
+}
+console.log(newStudent);
+
+</script>
+</html>

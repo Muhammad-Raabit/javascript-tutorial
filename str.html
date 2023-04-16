@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*
+       let text = "My Name is Muhammad Raabit And I am doing software developer Job I Have completed My acdemic carrer in 2021";
+        
+        let indTxt = text.indexOf("Raabit");
+        let cpyTxt = text.slice(0,indTxt);
+        let replaceTxt = "Saqib";
+        let thirdTxt = text.slice(indTxt+6);
+
+        console.log(cpyTxt);
+        console.log(indTxt);
+        console.log(replaceTxt);
+        console.log(thirdTxt);
+    console.log(cpyTxt + replaceTxt + thirdTxt);
+
+    */
+/*
+let name = "Raabit";
+store = name.charAt(0)
+console.log(store)
+*/
+/*
+let num = "This is example , and her is my new example";
+let result = num.replace("example","text");
+console.log(result);
+*/
+/*
+let num = "This is example , and her is my new example";
+let result = num.replace(/example/g,"Raabit");
+console.log(result);
+*/
+console.log(Math.random()*5)
+
+
+let headUser = prompt("Enter Head UserName");
+let tailsUser = prompt("Enter tails UserName");
+
+function changeString(user) {
+ let first =  user.charAt(0).toUpperCase();
+ let lastAll = user.slice(1).toUpperCase();
+    return first + lastAll;
+}
+headUser = changeString(headUser);
+tailsUser = changeString(tailsUser);
+
+let toss = Math.random() * 2;
+toss = Math.floor(toss);
+
+if (toss === 0) {
+    alert(" Heads "+headUser+" Win The Toss")
+}else{
+    alert(" Tails "+tailsUser+" Win The Toss")
+
+}
+
+/*
+let num = 10;
+let num1 = "10";
+console.log(typeof num.toString()); 
+console.log(typeof parseInt(num)); 
+console.log(typeof Number(num)); 
+console.log(typeof +(num)); 
+*/
+const days = ["Jan","Feb","Mar","Apr","May","Jun","July","Aug","Sep","Oct","Nov","Dec"]
+let dob = new Date("07/22/2001")
+let d = new Date();
+let month = d.getMonth();
+let day = d.getDay();
+let fullYear = d.getFullYear();
+let time = d.getTime();
+let minute = d.getMinutes();
+let dobYear =  fullYear - dob.getFullYear();
+
+let getMonth;
+if (month >= dob.getMonth) {
+    getMonth = month - dob.getMonth() ;
+    
+}else{
+    dobYear--;
+    getMonth = 11 + month - dob.getMonth();
+}
+
+let showMonth = days[getMonth];
+
+console.log("Month :"+month);
+console.log("date :"+d);
+console.log("Day :"+day);
+console.log("Time :"+time);
+console.log("Minutes :"+minute);
+console.log("Full Year :"+fullYear);
+console.log("Year Old :"+dobYear);
+console.log("Months :"+showMonth);
+
+// ________________________________________________
+let name = "my name is Abdul Samad Khan ";
+name = name.concat("Nadeem")
+console.log(name);
+
+
+
+</script>    
+</body>
+
+    
+</html>
+
+    

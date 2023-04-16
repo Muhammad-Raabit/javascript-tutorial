@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const myQuestions = [
+        {
+            Question1:"Whats is Your Name?",
+            answer:{
+                a:"Raabit",
+                b:"Saqib",
+                c:"Ahmed"
+            },
+            correctAnswer:"a"
+        },
+        {
+            Question2:"What is Your Designation?",
+            Answer:{
+                a:"Software Developer",
+                b:"ICMA Qualified",
+                c:"HVACR Technision"
+            },
+            correctAnswer:"a"
+
+        }
+    ]
+
+    // delete myQuestions[0].Question1;
+    // myQuestions.forEach(element => {
+    //     console.log(element);
+    // })  
+// console.log(myQuestions[0].answer);
+// _____________________________________________________
+
+const plan1 = {
+    name:"Basic",
+    price:3.99,
+    apac:100,
+    transfer:1000,
+    pages:10,
+    discountMonth:[6,7]
+}
+
+
+ function calcAnnual() {
+ var bestPrice = plan1.price;
+ var currDate = new Date();
+ currDate.setMonth(6)
+ var thisMo = currDate.getMonth();
+ console.log(thisMo);
+ plan1.discountMonth.forEach(element => {
+    if (element === thisMo) {
+  bestPrice = plan1.price * .8;
+
+}   
+});
+ 
+return bestPrice * 12;
+
+}
+ 
+
+let disCount = calcAnnual();
+console.log(disCount)
+
+
+// ___________________________________
+
+
+const Getinfo = function(id,name,designation){
+    this.id = id;
+    this.name = name;
+    this.designation = designation;
+
+}
+ 
+const obj1 = new Getinfo(11,"Raabit","Software Developer");
+console.log(obj1.name)
+
+// ________________________________________
+const plan2 = {
+    name:"Premium",
+    price:5.99,
+    apac:100,
+    transfer:2000,
+    pages:100,
+    discountMonth:[6,7]
+}
+
+for (const key in plan2) {
+   console.log( key +" :"+plan2[key])
+}
+
+plan2.hasOwnProperty("name")?console.log(plan2.name):"Not find";
+
+</script>
+</html>

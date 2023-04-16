@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <div id="div"></div>
+</body>
+<script>
+    /*
+    let para = document.getElementById("para");
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    para.innerHTML="This is Paragraph"
+    h1.innerHTML = "&nbsp Paragraph Child";
+    h2.innerHTML = "&nbsp &nbsp this is Heading child";
+   para.appendChild(h1);
+   h1.appendChild(h2);
+//    console.log(para)
+
+*/
+let div = document.getElementById("div");
+div.innerHTML = "I am Div"
+let p = document.createElement("p");
+let h1 = document.createElement("h1");
+h1.innerHTML="I am H1 <br>"
+let txt = document.createTextNode("I am Paragraph");
+let h1Txt = document.createTextNode("Heading para child");
+div.appendChild(p).appendChild(txt);
+// p.appendChild(txt);
+
+p.appendChild(h1).appendChild(h1Txt);
+console.log(p);
+
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//this is high order function because which takes a function as an Argument;        
+
+const loadData = ()=>{
+console.log("loadData function Active");
+}
+
+const getData = (load)=>{
+
+     load();
+}
+
+getData(loadData);
+
+
+// _________________________________________________________
+//this is high order function because return a function        
+function x(){
+  console.log("x function");
+    let data = function(){
+console.log("data function");
+    }
+
+return data;
+}
+
+let func = x();
+func()
+
+
+
+// ________________________________________________________
+        
+const radius =[3,1,2,4];
+
+const area = (radius)=>{
+return Math.PI * radius * radius;
+}
+const circumference = (radius)=>{
+return 2 * Math.PI * radius;
+}
+
+const diameter = (radius)=>{
+return 2* radius;
+}
+
+// const area  = radius.map((area)=>{
+// return Math.PI * area * area;
+// })
+
+console.log(radius.map(area))
+console.log(radius.map(circumference))
+console.log(radius.map(diameter))
+
+// ________________________________________________________________
+
+// const area = function(radius){
+// return Math.PI * radius * radius;
+// }
+// const calculate = function (area,logic){
+// const output = [];
+// for (let i = 0; i < area.length; i++) {
+//     output.push(logic(area[i]))
+// }
+// return output;
+// }
+
+
+// console.log(calculate(radius,area))
+// _____________________________________________________________________
+const calculateArea = function (area){
+const output = [];
+for (let i = 0; i < area.length; i++) {
+    output.push(Math.PI * area[i] * area[i])
+}
+return output;
+}
+
+
+
+
+// console.log(calculateArea(radius));
+    </script>
+</body>
+</html>

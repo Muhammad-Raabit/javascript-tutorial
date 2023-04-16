@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        background-color: yellow;
+      }
+      .altColor {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ul"></div>
+
+    <button>Press Me</button>
+    <button class="btn">Change</button>
+
+    <script>
+      let btn = document.querySelector(".btn");
+      function foo() {
+        console.log("Hello World");
+      }
+      function foo1(button) {
+        button.style.backgroundColor = "red";
+      }
+      btn.addEventListener("click", foo);
+      btn.addEventListener("click", () => {
+        foo1(btn); //this is right way topass argument function as a
+        //argument Event listner
+      });
+
+      /*        
+function y(y,x)
+{
+console.log("this is Y Function "+ y);
+x(y);
+}
+        
+y("Whatsapp",(x)=>{
+console.log("callback "+ x)
+}) 
+*/
+
+      /*
+const person1 = function(a,callback){
+    setTimeout(()=>{
+        console.log("Here i am taking to "+a);
+        callback();
+    },1000)
+}
+person1("Raabit",()=>{
+    setTimeout((name)=>{
+        console.log("Hey Whatsapp I,ll Call You Back okkk "+name);
+    },2000,"dude")
+})
+*/
+
+      /*
+const students =[
+    {name:"Muhammad Raabit",subject:"Software Developer"},
+    {name:"Muhammad Saqib",subject:"ICMA"}
+]
+
+
+const student1 =[
+    {
+    name:"Ahmed",
+    subject:"Ac Fridge",
+    },
+
+    {
+    name:"Ansab",
+    subject:"Doctor"
+   }
+]
+
+
+function enrollStu(student){
+   student.forEach((element) => {
+    students.push(element);    
+   }); 
+}
+
+function getStu(student){
+let str="";
+    student.forEach((element) => {
+str+= `<li>${element.name} :: ${element.subject}</li>`;
+});
+document.getElementById("ul").innerHTML = str
+
+}
+
+
+enrollStu(student1);
+getStu(students)
+
+*/
+
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        button.classList.toggle("altColor");
+      });
+
+      // _______________________________________________________
+      function register(callback) {
+        setTimeout(() => {
+          console.log("Register End");
+          callback();
+        }, 1000);
+      }
+      function sendEmail(callback) {
+        setTimeout(() => {
+          console.log("Email End");
+          callback();
+        }, 2000);
+      }
+      function login(callback) {
+        setTimeout(() => {
+          console.log("Login End");
+          callback();
+        }, 3000);
+      }
+      function getUserData(callback) {
+        setTimeout(() => {
+          console.log("Got User Data");
+          callback();
+        }, 2000);
+      }
+      function displayUserData() {
+        setTimeout(() => {
+          console.log("User data Displayed");
+        }, 1000);
+      }
+
+      register(function () {
+        sendEmail(function () {
+          login(function () {
+            getUserData(function () {
+              displayUserData();
+            });
+          });
+        });
+      });
+
+      console.log("Other Application Work");
+
+      // _____________________________________________________________
+
+      const userLeft = false;
+      const userWatchingCatMeme = true;
+
+      function watchTutorialCallback(callback, errorCallback) {
+        if (userLeft) {
+          errorCallback({
+            name: "User Left",
+            message: ":(",
+          });
+        } else if (userWatchingCatMeme) {
+          errorCallback({
+            name: "User Watching Cat Meme",
+            message: "webDevSimplified < cat",
+          });
+        } else {
+          callback("Thumbs Up and Subscribe");
+        }
+      }
+
+      watchTutorialCallback(
+        (message) => {
+          console.log(message);
+        },
+        (error) => {
+          console.log(error.name + " " + error.message);
+        }
+      );
+    </script>
+  </body>
+</html>

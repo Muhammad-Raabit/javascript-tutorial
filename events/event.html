@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="background-color: aqua;height: 50vh">
+<h1>hello World</h1>
+    </div>
+    <div></div>
+</body>
+<script>
+let div = document.querySelector(".container");
+div.addEventListener("mousemove",(e)=>{
+console.log(e.target);
+console.log(e.offsetX,e.offsetY)
+let setColor= e.target.style.backgroundColor = `rgb(
+    ${e.offsetX},${e.offsetY},154)`
+console.log(setColor)
+})
+
+</script>
+</html>

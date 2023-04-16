@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    
+    const arr = [5,1,3,2,6];
+    
+    
+const findSum = arr.reduce(function(acc,curr){
+    acc+=curr;
+    return acc; 
+},0)
+console.log(findSum);
+
+
+
+const findMax = arr.reduce(function(max,curr){
+
+    if (curr > max) {
+        max = curr;
+    }
+    return max;
+
+},0)
+
+console.log(findMax);
+    
+
+// ________________________________________________________
+
+
+
+
+const users = [ 
+    { firstName: "Muhammad", lastName: "Saqib", age: 26},
+    { firstName: "Muhammad", lastName: "Raabit", age:75},
+    { firstName: "Abdul", lastName: "Samad", age:50},
+    { firstName: "Abdul", lastName: "Rafay", age:26},
+    { firstName: "Moiz", lastName: "Ahmed", age: 50}
+]
+
+
+
+const findAge = users.reduce((acc,curr)=>{
+    if (acc[curr.age]) {
+        acc[curr.age]++;
+    }else{
+        acc[curr.age] = 1;
+    }
+
+    return acc
+},{})
+
+console.log(findAge);
+
+
+
+
+// ______________________________________________________________    
+    
+const userss = [ 
+    { firstName: "Muhammad", lastName: "Saqib", age: 26},
+    { firstName: "Muhammad", lastName: "Raabit", age:75},
+    { firstName: "Abdul", lastName: "Samad", age:50},
+    { firstName: "Syed", lastName: "Hatil", age: 26}
+]
+
+
+const ouput = userss.reduce((acc,curr)=>{
+
+if (curr.age < 30) {
+     acc.push(curr.firstName);
+}
+return acc;
+
+},[])
+
+console.log(ouput);
+
+
+    // const arr = [8,2,5,5];
+
+
+// const avg = arr.reduce((acc,curr,index,array)=>{
+
+// let total = acc+=curr;
+//     if (index === array.length-1) {
+        
+//         return total/array.length;
+          
+//     }
+// return total;
+// },0)
+
+// console.log(avg);
+
+
+// _______________________________________________________________
+const arrr = [5,1,3,2,6];
+
+
+const result = arrr.reduce((acc,curr)=>{
+// if (curr%2) {
+//     acc.push(curr)
+// }
+// ________________________________________
+// if (curr > 4) {
+//     acc.push(curr)
+// }
+// _____________________________________
+// acc.push( Math.PI * curr * curr)
+
+return acc;
+},[]) 
+// console.log(ne);
+
+
+
+
+
+
+
+
+
+
+
+const shopcart = [
+    {
+        userId: 1 ,ammount: 10
+    },
+    {
+        userId: 1 ,ammount: 15
+    },
+    {
+        userId: 2 ,ammount: 5
+    },
+
+    {
+        userId: 2 ,ammount: 100
+    }
+]
+
+
+const final = shopcart.reduce((acc,curr)=>{
+ if (curr.userId === 1)
+     acc.push(curr.ammount);
+    return acc;
+    
+},[]).reduce((acc,curr)=>{
+   return acc+=curr;
+},0)
+
+console.log(final);
+
+
+// _________________________________________________________________________
+const products = [{
+    name:"Laptop",
+    price:1000,
+    count:5
+},
+{
+    name:"Desktop",
+    price:1500,
+    count:2
+},
+{
+    name:"Phone",
+    price:500,
+    count:10
+}
+
+]
+
+
+const result1 =products.reduce((acc,curr)=>{
+  acc[curr.name] = curr.count * curr.price;
+return acc
+},{})
+console.log(result1);
+
+
+// ______________________________________________
+   
+const city = ['Islamabad','Lahore','Peshawar','Karachi','Sukkur'];
+let check = prompt("Enter City Name");
+
+let firstChar = check.slice(0,1).toUpperCase()
+let otherChar = check.slice(1).toLowerCase()
+check = firstChar + otherChar;
+
+let resultH = city.reduce((acc,curr)=>{
+    if(curr === check)
+    acc+=curr
+    return acc;
+},"")
+if (resultH) {
+    alert(`${check} city founded`)
+    
+}else{
+    alert("City Not Found")
+}
+
+    </script>
+</body>
+</html>

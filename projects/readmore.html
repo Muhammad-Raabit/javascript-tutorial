@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 500px;
+            max-width: 80%;/*Kam sy kam itni hogi screen choti karny par*/
+            /* padding: 20px; */
+            box-shadow:
+             rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+              rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+               rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        }
+        .title{
+            padding: 10px;  
+            font-size: 1.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            word-spacing: 2px;
+            letter-spacing: 3px;
+            border-bottom: 2px solid gray
+
+        }
+.card-body p{
+padding: 10px; 
+line-height: 1.3;
+font-size: 1rem;
+font-family:sans-serif;
+    }
+    .card-btn{
+        padding: 10px;
+    }
+    .card-btn button{
+        font-size: .95rem;
+        border:none;
+        background-color: rgb(181, 178, 178);
+        color: rgb(42, 7, 7);
+        padding: 6px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+button:active{
+    background-color: rgb(198, 197, 197);
+}
+
+.text,.do{
+    display: none;
+}
+.block{
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="title">Nameless World</div>
+        <div class="card-body">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, saepe atque? Aperiam a ex quisquam aut iure voluptatum harum aliquam voluptas est accusamus,
+    ullam doloribus sequi incidunt, 
+    velit dolores officiis <span class="dots">.....</span>
+    <span class="text">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi corporis architecto doloremque, 
+    velit ullam tempore esse veniam eligendi vel fugiat debitis
+</span>
+
+</p>
+        </div>
+        <div class="card-btn">
+<button>Read More</button>
+        </div>
+    </div>
+</body>
+<script>
+
+let btn = document.querySelector("button");
+let span = document.querySelector(".text");
+let dots = document.querySelector(".dots");
+
+btn.addEventListener("click",(e)=>{
+dots.classList.toggle("do")
+span.classList.toggle("block");
+if(e.target.textContent === 'Read More'){
+    e.target.textContent = 'Show Less'
+}else{
+    e.target.textContent = 'Read More'
+}
+
+})
+
+</script>
+</html>

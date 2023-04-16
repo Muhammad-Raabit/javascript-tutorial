@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+    const p = new Promise((resolve, reject) => {
+      let a = 1 + 2;
+      if (a === 2) {
+        resolve("SuccessFully :Resolved");
+      } else {
+        reject("Error :<)");
+      }
+    });
+    
+    p.then((responce) => {
+      console.log(responce);
+    }).catch((error) => {
+      console.log(error);
+    });
+    */
+
+      const userLeft = false;
+      const userWatchingCatMeme = false;
+
+      function watchTutorialPromise() {
+        return new Promise((resolve,reject)=>{
+          if (userLeft) {
+          reject({
+            name: "User Left",
+            message: ":(",
+          });
+        } else if (userWatchingCatMeme) {
+          reject({
+            name: "User Watching Cat Meme",
+            message: "webDevSimplified < cat",
+          });
+        } else {
+          resolve("Thumbs Up and Subscribe");
+        }
+      })
+
+       }
+        
+        
+      watchTutorialPromise().then((responce)=>{
+          console.log(responce);
+        }).catch((error) => {
+          console.log(error.name + " "+ error.message);
+        })
+    
+    </script>
+  </body>
+</html>

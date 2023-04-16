@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 1.5rem;
+        }
+        h1{
+            background-image:linear-gradient(180deg, red, yellow);
+        }
+        .container,.btnDiv{
+            background-color: lightblue;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-basis: 1;
+            margin: 15px;
+            align-items: center;
+        }
+        .container  div{
+            background-color: aqua;
+            width: 12%;
+            height: 40px;
+            display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border-radius: 5px;
+    }
+    button{
+        padding: .20em .85em;
+        font-size: 1.5rem;
+        cursor: pointer;
+background-color: rgb(58, 56, 56);
+color: whitesmoke;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;background-color: linear-gradient(180deg, red, yellow);">Stop Watch</h1>
+    <div class="container">
+        <p>Min</p>
+        <div class="minField">0</div>
+        <p>Sec</p>
+        
+        <div class="secField">0</div>
+        <p>Milli Sec</p>
+        
+        <div class="milliField">0</div>
+    </div>
+    <div class="btnDiv">
+        
+        <button class="btn">Start</button>
+        <button class="btn">Pause</button>
+        <button class="btn">Reset</button>
+        
+    </div>
+</body>
+<script>
+
+let minField = document.querySelector('.minField');
+let secField = document.querySelector('.secField');
+let milliField = document.querySelector('.milliField');
+let btn = document.querySelectorAll('.btn');
+let milliSec=0
+let sec=0
+let min =0;   
+let setTime;   
+
+function timer(){
+    milliSec++;
+        milliField.innerHTML=milliSec;
+        if(milliSec >=100){
+            sec++
+            secField.innerHTML=sec;
+            milliSec =0;
+        }else if(sec >= 60){
+            min++
+            minField.innerHTML=min;
+            sec = 0;
+        }
+    
+}
+
+let startWatch = function(start,pause,reset){
+start.addEventListener("click",()=>{
+setTime = setInterval(timer,10)
+start.disabled =true;
+})
+pause.addEventListener("click",()=>{
+clearInterval(setTime);
+start.disabled =false;
+
+})    
+
+reset.addEventListener("click",()=>{
+milliSec = 0;
+min = 0
+sec = 0;
+milliField.innerHTML = milliSec;
+minField.innerHTML = min;
+secField.innerHTML = sec;
+clearInterval(setTime);
+start.disabled =false;
+
+})
+}
+
+
+startWatch(btn[0],btn[1],btn[2]);
+</script>
+</html>

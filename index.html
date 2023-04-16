@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let per = 60;
+
+
+        if (per >= 50 && per < 60) {
+            document.write("Grade C")
+        } else if (per >= 60 && per < 70) {
+
+            document.write("Grade B")
+
+        } else if (per >= 70 && per < 80) {
+            document.write("Grade A")
+        } else {
+            document.write("You Are Failed!");
+        }
+
+        // ternary Opertaor
+
+        let firstName, lastName;
+        firstName = "Muhammad";
+        lastName = "Raabit";
+
+        let final = firstName == "Muhammad" ? console.log(lastName) : console.log("false");
+        // switch case
+        document.write("<br>");
+        let month = 'feb'
+
+
+        switch (month) {
+            case 'jan':
+                document.write("This Month is Jan")
+                break;
+            case 'feb':
+                document.write("This Month is feb");
+                break;
+            default:
+                document.write("Enter Eligibal Month");
+                break;
+        }
+
+let day;
+        switch (new Date().getDay()) {
+            case 0:
+             day = 'Sunday'
+                break;
+            case 1:
+                 day = 'Monday'
+
+                break;
+            case 2:
+                 day = 'Tuesday'
+
+                break;
+            case 3:
+                 day = 'Wenesday'
+
+                break;
+            case 4:
+                day = 'Thursday'
+                break;
+        }
+
+document.write("<br>"+day);
+console.log(day)
+
+
+// confirm box
+
+let a = confirm("Do you Like Our Website ?");
+
+document.write("<br>"+a);
+
+// prompt box
+
+let name = prompt("Enter Your Name ..");
+document.write("<br>"+name)
+// operator
+
+let star = 5;
+let fav = "5"
+if (star === fav) {
+    document.write("Matched")
+
+}else{
+    document.write("Not Matched")
+}
+
+function counte(){
+    let count = 0;
+    return function foo(){
+return count++;
+    }
+}
+let r = counte();
+console.log(r());
+console.log(r());
+console.log(r());
+
+    </script>
+</body>
+
+</html>
